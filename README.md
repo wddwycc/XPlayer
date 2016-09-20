@@ -4,27 +4,25 @@ XDPlayer is a PIP (Picture in Picture) Video Player for iOS.
 **Swift3** only.
 
 
-
-
-
-
-
 It's designed super easy to use
 
-```
+```swift
 // Play
 XDPlayer.play(url: URL(string: "video_url")!)
 // Dismiss
 XDPlayer.dismiss()
 ```
 
+<img src="https://raw.githubusercontent.com/wddwycc/xdplayer/master/Resources/demo.png" width="200">
+
+
 
 ### Install:
 
 Cocoapods:
 
-```
-pod 'XDPlayer'
+```ruby
+pod 'XDPlayer', :git => 'https://github.com/wddwycc/XDPlayer'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
@@ -40,8 +38,6 @@ Carthage:
 ```
 github "wddwycc/XDPlayer"
 ```
-
-
 
 ---
 
