@@ -70,13 +70,13 @@ extension XDPlayerViewController {
 
 		view.backgroundColor = UIColor.black
 		playerVC.showsPlaybackControls = false
-		playButtton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+		playButtton.setImage(UIImage.bundledImage(named: "play"), for: .normal)
 		playButtton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
 		playButtton.imageView?.contentMode = .scaleAspectFit
-		fullScreenButton.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
+		fullScreenButton.setImage(UIImage.bundledImage(named: "fullscreen"), for: .normal)
 		fullScreenButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
 		fullScreenButton.imageView?.contentMode = .scaleAspectFit
-		closeButton.setImage(#imageLiteral(resourceName: "close"), for: .normal)
+		closeButton.setImage(UIImage.bundledImage(named: "close"), for: .normal)
 		closeButton.imageView?.contentMode = .scaleAspectFit
 		timelineView.backgroundColor = UIColor(white: 1, alpha: 0.4)
 		timelineProgressedView.backgroundColor = themeColor

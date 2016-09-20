@@ -103,11 +103,11 @@ class XDPlayerViewController: WOViewController {
 			guard let rate = change?[NSKeyValueChangeKey.newKey] as? Float else { return }
 			if rate == 0 {
 				// stopped & lag
-				playButtton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+				playButtton.setImage(UIImage.bundledImage(named: "play"), for: .normal)
 			}
 			if rate == 1.0 {
 				// start play
-				playButtton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+				playButtton.setImage(UIImage.bundledImage(named: "pause"), for: .normal)
 			}
 		}
 		// finish loading

@@ -103,12 +103,12 @@ extension XDPlayerViewController {
 	func handleOrientationChange(notification: NSNotification) {
 		let currentOrientationState = UIDevice.current.orientation
 		if currentOrientationState.isPortrait {
-			fullScreenButton.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
+			fullScreenButton.setImage(UIImage.bundledImage(named: "fullscreen"), for: .normal)
 			transitionPanGesture.isEnabled = true
 			topGradientLayer.opacity = 0
 			bottomGradientLayer.opacity = 0
 		} else {
-			fullScreenButton.setImage(#imageLiteral(resourceName: "exitfullscreen"), for: .normal)
+			fullScreenButton.setImage(UIImage.bundledImage(named: "exitfullscreen"), for: .normal)
 			transitionPanGesture.isEnabled = false
 			topGradientLayer.opacity = 0.2
 			bottomGradientLayer.opacity = 0.2

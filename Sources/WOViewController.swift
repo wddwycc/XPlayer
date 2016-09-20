@@ -50,7 +50,7 @@ class WOViewController: UIViewController {
 		pipCloseButton.layer.rasterizationScale = UIScreen.main.scale
 		pipCloseButton.layer.shouldRasterize = true
 		let closeIconImageView = UIImageView()
-		closeIconImageView.image = #imageLiteral(resourceName: "close_small")
+		closeIconImageView.image = UIImage.bundledImage(named: "close_small")
 		closeIconImageView.alpha = 0.6
 		closeIconImageView.translatesAutoresizingMaskIntoConstraints = false
 		pipCloseButton.addSubview(closeIconImageView)

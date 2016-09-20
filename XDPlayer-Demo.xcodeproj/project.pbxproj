@@ -20,7 +20,9 @@
 		072B59B81D900D9800810F7D /* XDPlayerViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B59AD1D900D0400810F7D /* XDPlayerViewController+State.swift */; };
 		072B59B91D900D9800810F7D /* XDPlayerViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B599E1D8FE74B00810F7D /* XDPlayerViewController+UI.swift */; };
 		072B59BA1D900D9800810F7D /* XDPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D29001D1D34AF00C2398F /* XDPlayer.swift */; };
-		072B59BC1D90E60200810F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072B59BB1D90E60200810F7D /* Assets.xcassets */; };
+		072B59BC1D90E60200810F7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072B59BB1D90E60200810F7D /* Images.xcassets */; };
+		075CF1311D91059200366884 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CF1301D91059200366884 /* Utilities.swift */; };
+		075CF1321D9105B300366884 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CF1301D91059200366884 /* Utilities.swift */; };
 		077D28DD1D1D33BA00C2398F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D28DC1D1D33BA00C2398F /* AppDelegate.swift */; };
 		077D28DF1D1D33BA00C2398F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D28DE1D1D33BA00C2398F /* ViewController.swift */; };
 		077D28E41D1D33BA00C2398F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077D28E31D1D33BA00C2398F /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 		077D28F61D1D33C500C2398F /* XDPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 077D28F51D1D33C500C2398F /* XDPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		077D28FA1D1D33C500C2398F /* XDPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077D28F31D1D33C500C2398F /* XDPlayer.framework */; };
 		077D28FB1D1D33C500C2398F /* XDPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 077D28F31D1D33C500C2398F /* XDPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		078CB1691D90F11F00FD3463 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072B59BB1D90E60200810F7D /* Images.xcassets */; };
 		0798304B1D8E7AD70087A8C7 /* WOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D29031D1D372500C2398F /* WOViewController.swift */; };
 		0798304C1D8E7ADA0087A8C7 /* XDPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701651E1D8E57980019FA7C /* XDPlayerViewController.swift */; };
 		0798304D1D8E7ADD0087A8C7 /* XDPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D29001D1D34AF00C2398F /* XDPlayer.swift */; };
@@ -64,7 +67,8 @@
 		072B59AA1D900CEE00810F7D /* WOViewController+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WOViewController+State.swift"; path = "Sources/WOViewController+State.swift"; sourceTree = "<group>"; };
 		072B59AC1D900D0400810F7D /* XDPlayerViewController+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "XDPlayerViewController+Action.swift"; path = "Sources/XDPlayerViewController+Action.swift"; sourceTree = "<group>"; };
 		072B59AD1D900D0400810F7D /* XDPlayerViewController+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "XDPlayerViewController+State.swift"; path = "Sources/XDPlayerViewController+State.swift"; sourceTree = "<group>"; };
-		072B59BB1D90E60200810F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		072B59BB1D90E60200810F7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
+		075CF1301D91059200366884 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Sources/Utilities.swift; sourceTree = "<group>"; };
 		077D28D91D1D33BA00C2398F /* XDPlayer-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XDPlayer-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		077D28DC1D1D33BA00C2398F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		077D28DE1D1D33BA00C2398F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				077D29021D1D34B600C2398F /* Sources */,
+				078CB16A1D90F21100FD3463 /* Resources */,
 				077D28DB1D1D33BA00C2398F /* XDPlayer-Demo */,
 				077D28F41D1D33C500C2398F /* XDPlayer */,
 				077D28DA1D1D33BA00C2398F /* Products */,
@@ -148,9 +153,17 @@
 				072B59AD1D900D0400810F7D /* XDPlayerViewController+State.swift */,
 				072B599E1D8FE74B00810F7D /* XDPlayerViewController+UI.swift */,
 				077D29001D1D34AF00C2398F /* XDPlayer.swift */,
-				072B59BB1D90E60200810F7D /* Assets.xcassets */,
+				075CF1301D91059200366884 /* Utilities.swift */,
 			);
 			name = Sources;
+			sourceTree = "<group>";
+		};
+		078CB16A1D90F21100FD3463 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				072B59BB1D90E60200810F7D /* Images.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				077D28E71D1D33BA00C2398F /* LaunchScreen.storyboard in Resources */,
-				072B59BC1D90E60200810F7D /* Assets.xcassets in Resources */,
+				072B59BC1D90E60200810F7D /* Images.xcassets in Resources */,
 				077D28E41D1D33BA00C2398F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078CB1691D90F11F00FD3463 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +287,7 @@
 			files = (
 				072B59AE1D900D0400810F7D /* XDPlayerViewController+Action.swift in Sources */,
 				072B59AF1D900D0400810F7D /* XDPlayerViewController+State.swift in Sources */,
+				075CF1311D91059200366884 /* Utilities.swift in Sources */,
 				0798304D1D8E7ADD0087A8C7 /* XDPlayer.swift in Sources */,
 				072B599D1D8FE74000810F7D /* WOMaintainer.swift in Sources */,
 				072B599F1D8FE74B00810F7D /* XDPlayerViewController+UI.swift in Sources */,
@@ -294,6 +309,7 @@
 				072B59B91D900D9800810F7D /* XDPlayerViewController+UI.swift in Sources */,
 				072B59B51D900D9800810F7D /* WOViewController+State.swift in Sources */,
 				072B59B81D900D9800810F7D /* XDPlayerViewController+State.swift in Sources */,
+				075CF1321D9105B300366884 /* Utilities.swift in Sources */,
 				072B59B61D900D9800810F7D /* XDPlayerViewController.swift in Sources */,
 				072B59B71D900D9800810F7D /* XDPlayerViewController+Action.swift in Sources */,
 			);
