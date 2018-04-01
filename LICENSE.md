@@ -1,6 +1,6 @@
 Licensed under the **MIT** license
 
-> Copyright (c) 2016 monk-studio
+> Copyright (c) 2017 monk-studio
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the

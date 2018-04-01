@@ -1,8 +1,8 @@
 //
-//  XTPlayerViewController.swift
-//  video_test
+//  XDPlayerViewController.swift
+//  XDPlayer
 //
-//  Created by 闻端 on 16/6/21.
+//  Created by duan on 16/6/21.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 

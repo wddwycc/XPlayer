@@ -1,8 +1,8 @@
 //
 //  XDPlayerViewController+UI.swift
-//  XDPlayer-Demo
+//  XDPlayer
 //
-//  Created by 闻端 on 16/9/18.
+//  Created by duan on 16/9/18.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 

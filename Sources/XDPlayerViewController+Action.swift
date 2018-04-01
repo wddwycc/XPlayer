@@ -1,8 +1,8 @@
 //
 //  XDPlayerViewController+Action.swift
-//  XDPlayer-Demo
+//  XDPlayer
 //
-//  Created by 闻端 on 16/9/19.
+//  Created by duan on 16/9/19.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import AVFoundation
 
 // MARK: Action
 extension XDPlayerViewController {
-	func handleSliderPan(gesture: UIPanGestureRecognizer) {
+	@objc func handleSliderPan(gesture: UIPanGestureRecognizer) {
 		let locationInTimelineView = gesture.location(in: timelineView)
 		switch gesture.state {
 		case .began:
@@ -40,7 +40,7 @@ extension XDPlayerViewController {
 		self.timelineLabel.text = currentTimeString + " / " + totalTimeString
 	}
 	
-	func toggleShowControls(gesture: UITapGestureRecognizer) {
+	@objc func toggleShowControls(gesture: UITapGestureRecognizer) {
 		if gesture.state != .ended { return }
 		let location = gesture.location(in: self.view)
 		if location.y > playButtton.frame.minY || location.y < closeButton.frame.maxY { return }
@@ -82,7 +82,7 @@ extension XDPlayerViewController {
 		}
 	}
 	
-	func togglePlay() {
+	@objc func togglePlay() {
 		if playerVC.player!.rate == 0 {
 			playerVC.player!.play()
 		} else {
@@ -90,7 +90,7 @@ extension XDPlayerViewController {
 		}
 	}
 	
-	func toggleOrientationSwitch() {
+	@objc func toggleOrientationSwitch() {
 		guard let currentOrientationState = UIDevice.current.value(forKey: "orientation") as? Int else { return }
 		if currentOrientationState == UIInterfaceOrientation.landscapeLeft.rawValue {
 			UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
@@ -100,7 +100,7 @@ extension XDPlayerViewController {
 		}
 	}
 	
-	func handleOrientationChange(notification: NSNotification) {
+	@objc func handleOrientationChange(notification: NSNotification) {
 		let currentOrientationState = UIDevice.current.orientation
 		if currentOrientationState.isPortrait {
 			fullScreenButton.setImage(UIImage.bundledImage(named: "fullscreen"), for: .normal)

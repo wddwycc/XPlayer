@@ -1,17 +1,17 @@
 //
 //  WOMaintainer.swift
-//  XDPlayer-Demo
+//  XDPlayer
 //
-//  Created by 闻端 on 16/6/24.
+//  Created by duan on 16/6/24.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 
 import UIKit
 
 enum WOState {
-	case Fullscreen
-	case PIP
-	case Out
+	case fullscreen
+	case pip
+	case out
 }
 
 struct WOMaintainerInfo {
@@ -24,11 +24,11 @@ struct WOMaintainerInfo {
 }
 
 class WOMaintainer {
-	static var state: WOState = .Out
+	static var state: WOState = .out
 	static var vc: WOViewController?
 	static func show(vc: WOViewController) {
 		guard let window = UIApplication.shared.keyWindow else { return }
-		if WOMaintainer.state != .Out {
+		if WOMaintainer.state != .out {
 			dismiss(completion: {
 				WOMaintainer.show(vc: vc)
 			})
@@ -51,18 +51,18 @@ class WOMaintainer {
 			vc.containerTopConstraint,
 			vc.containerBottomConstraint
 		])
-		WOMaintainer.state = .Fullscreen
+		WOMaintainer.state = .fullscreen
 	}
 	
 	static func dismiss(completion: (()->())?) {
-		if WOMaintainer.vc == nil { return }
+        guard let vc = WOMaintainer.vc else { return }
 		UIView.animate(withDuration: 0.3, animations: {
-			WOMaintainer.vc!.view.alpha = 0
+			vc.view.alpha = 0
 		}) { _ in
-			WOMaintainer.vc!.view.removeFromSuperview()
-			WOMaintainer.vc!.didEnterOut()
+			vc.view.removeFromSuperview()
+			vc.didEnterOut()
 			WOMaintainer.vc = nil
-			WOMaintainer.state = .Out
+			WOMaintainer.state = .out
 			completion?()
 		}
 	}
@@ -74,4 +74,3 @@ func delay(seconds: Double, completion:@escaping ()->()) {
 		completion()
 	})
 }
-

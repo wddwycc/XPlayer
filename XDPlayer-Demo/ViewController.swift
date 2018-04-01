@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  XDPlayer-Demo
 //
-//  Created by 闻端 on 16/6/24.
+//  Created by duan on 16/6/24.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 
@@ -19,10 +19,9 @@ class ViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		
-		
-		delay(seconds: 2) { 
-			XDPlayer.play(url: URL(string: "https://cdn.xiaotaojiang.com/uploads/7c/1e7b570e20dfc52a3ab6de1d965df0/_.mp4")!)
+		delay(seconds: 2) {
+            let url = URL(string: "https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4")!
+			XDPlayer.play(url: url)
 		}
 	}
 	

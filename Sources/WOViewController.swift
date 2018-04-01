@@ -1,8 +1,8 @@
 //
-//  WindowOverlayViewController.swift
-//  XDPlayer-Demo
+//  WOViewController.swift
+//  XDPlayer
 //
-//  Created by 闻端 on 16/6/24.
+//  Created by duan on 16/6/24.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 
@@ -145,7 +145,7 @@ extension WOViewController {
 	
 	@objc func handleHangAroundPan(gesture: UIPanGestureRecognizer) {
 		guard let window = UIApplication.shared.keyWindow else { return }
-		if WOMaintainer.state != .PIP { return }
+		if WOMaintainer.state != .pip { return }
 		let locationInWindow = gesture.location(in: window)
 		let targetRect = CGRect(x: locationInWindow.x - self.PIPRect.width / 2, y: locationInWindow.y - self.PIPRect.height / 2, width: self.PIPRect.width, height: self.PIPRect.height)
 		switch gesture.state {
@@ -170,8 +170,8 @@ extension WOViewController {
 	@objc func handleTap(gesture: UITapGestureRecognizer) {
 		guard let window = UIApplication.shared.keyWindow else { return }
 		if gesture.state != .ended { return }
-		if WOMaintainer.state == .PIP {
-			WOMaintainer.state = .Fullscreen
+		if WOMaintainer.state == .pip {
+			WOMaintainer.state = .fullscreen
 			self.willEnterFullScreen()
 			self.updateFrame(rect: UIScreen.main.bounds)
 			UIView.animate(withDuration: 0.3, animations: {
@@ -185,6 +185,34 @@ extension WOViewController {
 	@objc func didPressPipCloseButton() {
 		WOMaintainer.dismiss(completion: nil)
 	}
+
+    @objc func willEnterFullScreen() {
+        self.toggleDissmissButtonAnimation(show: false)
+        self.hangAroundPanGesture.isEnabled = false
+        self.tapGesture.isEnabled = false
+    }
+
+    @objc func didEnterFullScreen() {
+        WOMaintainer.state = .fullscreen
+        self.transitionPanGesture.isEnabled = true
+    }
+
+    @objc func willEnterPIP() {
+        self.transitionPanGesture.isEnabled = false
+    }
+
+    @objc func didEnterPIP() {
+        WOMaintainer.state = .pip
+        self.tapGesture.isEnabled = true
+        self.hangAroundPanGesture.isEnabled = true
+        self.toggleDissmissButtonAnimation(show: true)
+    }
+
+    @objc func didStartTransition() {
+    }
+
+    @objc func didEnterOut() {
+    }
 }
 
 // MARK: Animation

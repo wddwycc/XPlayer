@@ -1,12 +1,13 @@
 //
 //  XDPlayerViewController+State.swift
-//  XDPlayer-Demo
+//  XDPlayer
 //
-//  Created by 闻端 on 16/9/19.
+//  Created by duan on 16/9/19.
 //  Copyright © 2016年 monk-studio. All rights reserved.
 //
 
 import UIKit
+
 
 extension XDPlayerViewController {
 	override func didEnterPIP() {
