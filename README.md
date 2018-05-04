@@ -13,7 +13,7 @@ XPlayer is a **drop to use** lib for playing video on iOS with:
 
 * playback control
 * landscape & portrait switch
-* picture in Picture mode with smooth interactive transition
+* picture in picture mode with smooth interactive transition
 
 
 To keep it simple, the lib currently only provides two methods:
