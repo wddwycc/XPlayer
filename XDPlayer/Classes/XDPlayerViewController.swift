@@ -13,9 +13,9 @@ import AVFoundation
 class XDPlayerViewController: WOViewController {
 	// UI
 	let playerVC = AVPlayerViewController(nibName: nil, bundle: nil)
-	let playButtton = UIButton(type: UIButtonType.custom)
-	let fullScreenButton = UIButton(type: UIButtonType.custom)
-	let closeButton = UIButton(type: UIButtonType.custom)
+	let playButtton = UIButton()
+	let fullScreenButton = UIButton()
+	let closeButton = UIButton()
 	let timelineLabel = UILabel()
 	let timelineViewContainer = UIView()
 	let timelineView = UIView()
