@@ -1,40 +1,28 @@
-XDPlayer
---
-XDPlayer is a PIP (Picture in Picture) Video Player for iOS.  
-**Swift3**  
-**iOS9.0+**
+# XDPlayer
 
+[![Version](https://img.shields.io/cocoapods/v/XDPlayer.svg?style=flat)](https://cocoapods.org/pods/XDPlayer)
+[![License](https://img.shields.io/cocoapods/l/XDPlayer.svg?style=flat)](https://cocoapods.org/pods/XDPlayer)
+[![Platform](https://img.shields.io/cocoapods/p/XDPlayer.svg?style=flat)](https://cocoapods.org/pods/XDPlayer)
 
-It's designed super easy to use
+## Example
 
-```swift
-// Play
-XDPlayer.play(url: URL(string: "video_url")!)
-// Dismiss
-XDPlayer.dismiss()
-```
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-<img src="https://raw.githubusercontent.com/wddwycc/xdplayer/master/Resources/demo.png" width="200">
+## Requirements
 
+## Installation
 
-
-### Install:
-
-Cocoapods:
+XDPlayer is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XDPlayer', :git => 'https://github.com/wddwycc/XDPlayer'
+pod 'XDPlayer'
 ```
 
-Carthage:
+## Author
 
-```
-github "wddwycc/XDPlayer"
-```
+wddwyss@gmail.com, wddwyss@gmail.com
 
----
+## License
 
-Icons are from [AwesomeFont](http://fontawesome.io/)  
-The Project is under MIT License
-
-
+XDPlayer is available under the MIT license. See the LICENSE file for more info.

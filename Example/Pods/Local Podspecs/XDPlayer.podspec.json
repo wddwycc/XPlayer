@@ -1,0 +1,38 @@
+{
+  "name": "XDPlayer",
+  "version": "0.2.0",
+  "summary": "PIP Video player for iOS",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wddwycc/XDPlayer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wddwycc": "wddwyss@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/wddwyss@gmail.com/XDPlayer.git",
+    "tag": "0.2.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "XDPlayer/Classes/**/*",
+  "resource_bundles": {
+    "XDPlayer": [
+      "XDPlayer/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "RxSwift": [
+      "~> 4.0"
+    ],
+    "RxCocoa": [
+      "~> 4.0"
+    ],
+    "TinyConstraints": [
+      "~>3.0"
+    ]
+  }
+}

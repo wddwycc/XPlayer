@@ -1,0 +1,6 @@
+framework module XDPlayer {
+  umbrella header "XDPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}
