@@ -17,8 +17,8 @@ To keep it simple, the lib only provides two methods
 
 ```swift
 class XPlayer {
-	static func play(_ url: URL, themeColor: UIColor)
-	static func dismiss(completion: (() -> ())? = nil)
+    static func play(_ url: URL, themeColor: UIColor)
+    static func dismiss(completion: (() -> ())? = nil)
 }
 ```
 
