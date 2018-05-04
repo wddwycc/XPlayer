@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wddwycc' => 'wddwyss@gmail.com' }
-  s.source           = { :git => 'https://github.com/wddwyss@gmail.com/XPlayer.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/wddwycc/XPlayer.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/wddwycc'
 
   s.ios.deployment_target = '10.0'

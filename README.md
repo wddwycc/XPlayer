@@ -4,16 +4,19 @@
 [![License](https://img.shields.io/cocoapods/l/XPlayer.svg?style=flat)](https://cocoapods.org/pods/XPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/XPlayer.svg?style=flat)](https://cocoapods.org/pods/XPlayer)
 
+![](https://storage.googleapis.com/duan/etc/69D3CB50-0CEF-4FA6-999F-926FB5A2C731/XPlayer_demo.gif
+)
+
 ## Introduction
 
-XPlayer is a `drop to use` lib for playing video on iOS:
+XPlayer is a **drop to use** lib for playing video on iOS with:
 
-* Landscape & portrait switch
-* Playback control
-* Picture in Picture mode with smooth interactive transition
+* playback control
+* landscape & portrait switch
+* picture in Picture mode with smooth interactive transition
 
 
-To keep it simple, the lib only provides two methods
+To keep it simple, the lib currently only provides two methods:
 
 ```swift
 class XPlayer {
