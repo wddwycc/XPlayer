@@ -63,14 +63,17 @@ class WOViewController: UIViewController {
 
         closeIconImageView.centerInSuperview()
         closeIconImageView.size(CGSize.square(12))
-		// Action
+
+        // Action
 		pipCloseButton.addTarget(self, action: #selector(didPressPipCloseButton), for: .touchUpInside)
 		transitionPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTransitionPan))
 		view.addGestureRecognizer(transitionPanGesture)
-		hangAroundPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handleHangAroundPan))
+
+        hangAroundPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handleHangAroundPan))
 		hangAroundPanGesture.isEnabled = false
 		view.addGestureRecognizer(hangAroundPanGesture)
-		tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
 		view.addGestureRecognizer(tapGesture)
 	}
 }
@@ -81,28 +84,28 @@ extension WOViewController {
 		guard let window = UIApplication.shared.keyWindow else { return }
 		let translationY = gesture.translation(in: window).y
 		let targetTranslationY = min(max(translationY, 0), panningLength)
-		let percentage = min(1, targetTranslationY / self.panningLength)
+		let percentage = min(1, targetTranslationY / panningLength)
 		switch gesture.state {
 		case .changed:
 			if percentage > 0 && !validatingPanning {
 				validatingPanning = true
 				didStartTransition()
 			}
-			self.updateFrame(
+			updateFrame(
 				rect: inBetweenFrame(
 					outerFrame: UIScreen.main.bounds,
-					innerFrame: self.PIPRect, percentage: percentage
+					innerFrame: PIPRect, percentage: percentage
 				)
 			)
 		case .ended:
-			self.validatingPanning = false
+			validatingPanning = false
 			if percentage < 0.3 {
 				var speed = gesture.velocity(in: window).y
 				if speed < 0 { speed = -speed }
 				if speed > 0 { speed = 0 }
 				speed = speed / ( panningLength * percentage )
-				self.willEnterFullScreen()
-				self.updateFrame(rect: UIScreen.main.bounds)
+				willEnterFullScreen()
+				updateFrame(rect: UIScreen.main.bounds)
 				UIView.animate(
 					withDuration: 0.3,
 					delay: 0,
@@ -120,8 +123,8 @@ extension WOViewController {
 				var speed = gesture.velocity(in: window).y
 				if speed < 0 { speed = 0 }
 				speed = speed / ( panningLength * (1 - percentage) )
-				self.willEnterPIP()
-				self.updateFrame(rect: self.PIPRect)
+				willEnterPIP()
+				updateFrame(rect: PIPRect)
 				UIView.animate(
 					withDuration: 0.3,
 					delay: 0,
@@ -131,8 +134,8 @@ extension WOViewController {
 					animations: {
 						window.layoutIfNeeded()
 					},
-					completion: { _ in
-						self.didEnterPIP()
+					completion: { [weak self] _ in
+						self?.didEnterPIP()
 					}
 				)
 			}
@@ -144,18 +147,23 @@ extension WOViewController {
 		guard let window = UIApplication.shared.keyWindow else { return }
 		if WOMaintainer.state != .pip { return }
 		let locationInWindow = gesture.location(in: window)
-		let targetRect = CGRect(x: locationInWindow.x - self.PIPRect.width / 2, y: locationInWindow.y - self.PIPRect.height / 2, width: self.PIPRect.width, height: self.PIPRect.height)
+		let targetRect = CGRect(x: locationInWindow.x - PIPRect.width / 2,
+                                y: locationInWindow.y - PIPRect.height / 2,
+                                width: PIPRect.width, height: PIPRect.height)
 		switch gesture.state {
 		case .began:
 			self.updateFrame(rect: insideFrame(objectFrame: targetRect, superViewSize: UIScreen.main.bounds.size, inset: 0))
-			UIView.animate(withDuration: 0.3, animations: { [weak self] in
-				self?.view.layoutIfNeeded()
+			UIView.animate(withDuration: 0.3, animations: {
+				self.view.layoutIfNeeded()
 			})
 		case .changed:
-			self.updateFrame(rect: insideFrame(objectFrame: targetRect, superViewSize: UIScreen.main.bounds.size, inset: 0))
+			self.updateFrame(rect: insideFrame(objectFrame: targetRect,
+                                               superViewSize: UIScreen.main.bounds.size, inset: 0))
 		case .ended:
-			let inside = insideFrame(objectFrame: self.view.frame, superViewSize: UIScreen.main.bounds.size, inset: 12)
-			let sided = sidedFrame(objectFrame: inside, superViewSize: UIScreen.main.bounds.size)
+			let inside = insideFrame(objectFrame: view.frame,
+                                     superViewSize: UIScreen.main.bounds.size, inset: 12)
+			let sided = sidedFrame(objectFrame: inside,
+                                   superViewSize: UIScreen.main.bounds.size)
 			self.updateFrame(rect: sided)
 			UIView.animate(withDuration: 0.2, animations: {
 				window.layoutIfNeeded()
@@ -184,25 +192,25 @@ extension WOViewController {
 	}
 
     @objc func willEnterFullScreen() {
-        self.toggleDissmissButtonAnimation(show: false)
-        self.hangAroundPanGesture.isEnabled = false
-        self.tapGesture.isEnabled = false
+        toggleDissmissButtonAnimation(show: false)
+        hangAroundPanGesture.isEnabled = false
+        tapGesture.isEnabled = false
     }
 
     @objc func didEnterFullScreen() {
         WOMaintainer.state = .fullscreen
-        self.transitionPanGesture.isEnabled = true
+        transitionPanGesture.isEnabled = true
     }
 
     @objc func willEnterPIP() {
-        self.transitionPanGesture.isEnabled = false
+        transitionPanGesture.isEnabled = false
     }
 
     @objc func didEnterPIP() {
         WOMaintainer.state = .pip
-        self.tapGesture.isEnabled = true
-        self.hangAroundPanGesture.isEnabled = true
-        self.toggleDissmissButtonAnimation(show: true)
+        tapGesture.isEnabled = true
+        hangAroundPanGesture.isEnabled = true
+        toggleDissmissButtonAnimation(show: true)
     }
 
     @objc func didStartTransition() {
@@ -215,8 +223,8 @@ extension WOViewController {
 // MARK: Animation
 extension WOViewController {
 	func toggleDissmissButtonAnimation(show: Bool) {
-		UIView.animate(withDuration: 0.3) { [weak self] in
-			self?.pipCloseButton.alpha = show ? 1 : 0
+		UIView.animate(withDuration: 0.3) {
+			self.pipCloseButton.alpha = show ? 1 : 0
 		}
 	}
 }

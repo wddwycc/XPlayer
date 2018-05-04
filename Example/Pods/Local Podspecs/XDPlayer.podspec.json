@@ -25,12 +25,6 @@
     ]
   },
   "dependencies": {
-    "RxSwift": [
-      "~> 4.0"
-    ],
-    "RxCocoa": [
-      "~> 4.0"
-    ],
     "TinyConstraints": [
       "~>3.0"
     ]

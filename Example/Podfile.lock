@@ -4,8 +4,6 @@ PODS:
   - RxSwift (4.1.2)
   - TinyConstraints (3.1.0)
   - XDPlayer (0.2.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
     - TinyConstraints (~> 3.0)
 
 DEPENDENCIES:
@@ -28,7 +26,7 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   TinyConstraints: 4721a4b303c799328867078ade6560e152df54d1
-  XDPlayer: ed69a5ef0106f7ed2ecae59657317d2e95ea0cc3
+  XDPlayer: 38b93f4492bc64c17a20e817b4a905a19f5f2270
 
 PODFILE CHECKSUM: 39f0fb5a2543df3e3e2715ab11816c14ade2375d
 
