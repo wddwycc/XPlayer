@@ -17,7 +17,7 @@ def run(icon_name, size=24):
     factor = size / ORIGIN_SIZE
     cairosvg.svg2png(
         bytestring=r.text,
-        write_to=os.path.join('./XDPlayer/Assets', icon_name + '.png'),
+        write_to=os.path.join('./XPlayer/Assets', icon_name + '.png'),
         scale=factor * 2
     )
     print('🎉')
