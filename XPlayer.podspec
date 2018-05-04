@@ -8,7 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XPlayer'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
+  s.swift_version = '4.1'
   s.summary          = 'PIP Video player for iOS'
 
 # This description is used to generate tags and improve search results.
@@ -29,6 +30,7 @@ TODO: Add long description of the pod here.
   s.social_media_url = 'https://twitter.com/wddwycc'
 
   s.ios.deployment_target = '10.0'
+  s.requires_arc = true
 
   s.source_files = 'XPlayer/Classes/**/*'
   
